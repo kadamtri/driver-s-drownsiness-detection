@@ -13,7 +13,7 @@ def preprocess(frame):
     return image
 
 def prediction(frame):
-    model = tf.keras.models.load_model('drowiness_new6')
+    model = tf.keras.models.load_model('drowsiness_new6')
     frame = cv2.resize(frame, (145, 145), interpolation= cv2.INTER_AREA)
     frame = frame.reshape(1, frame.shape[0], frame.shape[1], 3)
     prediction = model.predict(frame)
